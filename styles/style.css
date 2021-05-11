@@ -16,7 +16,7 @@ button.fat {
     background-color: #ff5E84;
 }
 
-#footer a {
+footer a {
     color: #25282B;
     text-decoration: none;
 }
@@ -24,3 +24,5 @@ button.fat {
 .hide {
     display: none;
 }
+
+
