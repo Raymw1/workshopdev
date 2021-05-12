@@ -5,6 +5,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+body.hideScroll {
+    overflow: hidden;
+}
+
 a {
     color: #ff5E84;
     font-weight: bold;
@@ -16,16 +20,15 @@ footer a:hover {
     text-decoration: underline;
 }
 
-p {
+p, .description {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.1px;
 }
 
 #container {
-    width: 90%; /* margin when the width is less than... */
+    width: 80%; /* margin when the width is less than... */
     max-width: 980px;
-    margin: auto;
     display: flex;
     margin: 40px auto;
 }
@@ -90,7 +93,7 @@ footer a {
 
 .idea {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
     background-color: #fff;
     padding: 32px;
     border-radius: 8px;
@@ -118,9 +121,12 @@ footer a {
 
 #modal {
     background-color: #ff5E84;
-    position: absolute; /* Put the element in the beginning of the page*/
+    position: fixed; /* Put the element in the beginning of the page*/
     top: 0; /* ^^^^^ */
-    width: 100vw;   /* Use the full width */
+    bottom: 0;
+    right: 0;
+    left: 0;
+    /*width: 100vw;   /* Use the full width
     height: 100vh;  /* Use the full heigth */
     display: flex;              /* Put in the middle of the page */
     /* align-items: center; */
@@ -128,8 +134,12 @@ footer a {
     transition: 400ms;
 }
 
+#modal.addScroll {
+    overflow: auto;
+}
+
 #modal .content {
-    margin-top: 128px;
+    margin-top: 5%;
     color: #fff;
 }
 
@@ -139,7 +149,7 @@ footer a {
     text-transform: uppercase;
 }
 
-#modal .content form {
+#modal form {
     width: 80%;
     max-width: 800px;
     margin: 0 auto;
@@ -183,6 +193,7 @@ form a {
     font-size: 14px;
     font-weight: bold;
     transition: 400ms;
+    margin-bottom: 15%;
 }
 
 form a:hover {
@@ -197,6 +208,7 @@ form button {
     height: 40px;
     border-radius: 6px;
     cursor: pointer;
+    margin-bottom: 15%;
     margin-top: 32px;
     grid-column: 2; /* Transfer to the second column */
     justify-self: end;  /* Transfer to the end of the column */
