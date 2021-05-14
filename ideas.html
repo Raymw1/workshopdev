@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <title>Ideias - Casa Criativa</title>
+</head>
+<body id="page-ideas">
+    <div id="container">
+        <header>
+            <a href="/"><img src="/assets/logo.png" alt="Casa Criativa"></a>
+            <nav>
+                <li><a href="/">Início</a></li>
+                <li><a href="#" class="button" onclick="getModal()">Nova ideia</a></li>
+            </nav>
+        </header>
+        <section id="title">
+            <p>Em exibição</p>
+            <h1>Ideias</h1>
+        </section>
+        <main>
+            <section id="ideas">
+                <div class="idea">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/2729/2729007.svg?token=exp=1620761718~hmac=a2c7b657b6b3cb3680ff38c08fb2fcf3" alt="Coding courses">
+                    <div class="content">
+                        <h3>Cursos de Programação</h3>
+                        <p>Estudo</p>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eaque repellendus alias quasi repudiandae velit;</p>
+                        </div>
+                        <a href="#">Ir para a ideia</a>
+                    </div>
+                </div>
+                <div class="idea">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/2729/2729069.svg?token=exp=1620761718~hmac=c23d1569dfab4ceaff57c38705ad6d1e" alt="Yoga">
+                    <div class="content">
+                        <h3>Yoga</h3>
+                        <p>Bem Estar</p>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eaque repellendus alias quasi repudiandae velit;</p>
+                        </div>
+                        <a href="#">Ir para a ideia</a>
+                    </div>
+                </div>
+                <div class="idea">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/2729/2729001.svg?token=exp=1620761718~hmac=661c743d5588b42d313ecd86c78ba889" alt="Reading">
+                    <div class="content">
+                        <h3>Leitura</h3>
+                        <p>Estudo/Entretenimento</p>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eaque repellendus alias quasi repudiandae velit;</p>
+                        </div>
+                        <a href="#">Ir para a ideia</a>
+                    </div>
+                </div>
+                <div class="idea">
+                    <img src="https://www.flaticon.com/svg/vstatic/svg/2729/2729027.svg?token=exp=1620934043~hmac=4ebb143d41ff7ea490a5849c585f42d7" alt="Meditation">
+                    <div class="content">
+                        <h3>Meditação</h3>
+                        <p>Saúde Mental</p>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eaque repellendus alias quasi repudiandae velit;</p>
+                        </div>
+                        <a href="#">Ir para a ideia</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>Com ♥️ <a href="https://github.com/Raymw1" target="_blank">Rayan Wilbert</a></footer>
+    </div>
+    <div id="modal" class="hide">
+        <div class="content">
+            <h1>Nova ideia</h1>
+            <form action="">
+                <div class="input-wrapper">
+                    <label for="title">Título da ideia</label>
+                    <input type="text" name="title">
+                </div>
+                <div class="input-wrapper">
+                    <label for="category">Categoria</label>
+                    <input type="text" name="category">
+                </div>
+                <div class="input-wrapper">
+                    <label for="image">Link da imagem</label>
+                    <input type="url" name="image">
+                </div>
+                <div class="input-wrapper">
+                    <label for="description">Descrição da ideia</label>
+                    <textarea name="description" cols="30" rows="10"></textarea>
+                </div>
+                <div class="input-wrapper">
+                    <label for="link">Link da ideia</label>
+                    <input type="url" name="link">
+                </div>
+                <a href="#" onclick="getModal()">Voltar</a>
+                <button>Salvar</button>
+            </form>
+        </div>
+    </div>
+    <script src="/scripts/script.js"></script>
+</body>
+</html>
