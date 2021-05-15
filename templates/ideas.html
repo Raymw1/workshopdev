@@ -33,7 +33,7 @@
                         <div class="description">
                             <p>{{ idea.description }}</p>
                         </div>
-                        <a href="{{ idea.url }}">Ir para a ideia</a>
+                        <a href="{{ idea.url }}" target="_blank">Ir para a ideia</a>
                     </div>
                 </div>
                 {% endfor %}
@@ -41,35 +41,7 @@
         </main>
         <footer>Com ♥️ <a href="https://github.com/Raymw1" target="_blank">Rayan Wilbert</a></footer>
     </div>
-    <div id="modal" class="hide">
-        <div class="content">
-            <h1>Nova ideia</h1>
-            <form action="">
-                <div class="input-wrapper">
-                    <label for="title">Título da ideia</label>
-                    <input type="text" name="title">
-                </div>
-                <div class="input-wrapper">
-                    <label for="category">Categoria</label>
-                    <input type="text" name="category">
-                </div>
-                <div class="input-wrapper">
-                    <label for="image">Link da imagem</label>
-                    <input type="url" name="image">
-                </div>
-                <div class="input-wrapper">
-                    <label for="description">Descrição da ideia</label>
-                    <textarea name="description" cols="30" rows="10"></textarea>
-                </div>
-                <div class="input-wrapper">
-                    <label for="link">Link da ideia</label>
-                    <input type="url" name="link">
-                </div>
-                <a href="#" onclick="getModal()">Voltar</a>
-                <button>Salvar</button>
-            </form>
-        </div>
-    </div>
+    {% include "modal.html" %}
     <script src="/scripts/script.js"></script>
 </body>
 </html>
