@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <title>Casa Criativa</title>
-</head>
-<body>
-    <div id="container">
+{% extends "layout.html" %}
+{% block content %}
         <section id="intro">
             <header>
                 <a href="/"></a><img src="/assets/logo.png" alt="Casa Criativa"></a>
@@ -27,22 +16,6 @@
             <footer>Com ♥️ <a href="https://github.com/Raymw1" target="_blank">Rayan Wilbert</a></footer>
         </section>
         <section id="last-ideas">
-            {% for idea in ideas %}
-            <div class="idea">
-                <img src="{{ idea.img }}" alt="Imagem de {{ idea.title }}">
-                <div class="content">
-                    <h3>{{ idea.title }}</h3>
-                    <p>{{ idea.category }}</p>
-                    <div class="description">
-                        <p>{{ idea.description }}</p>
-                    </div>
-                    <a href="{{ idea.url }}" target="_blank">Ir para a ideia</a>
-                </div>
-            </div>
-            {% endfor %}
+            {% include "allIdeas.html" %}
         </section>
-    </div>
-    {% include "modal.html" %}
-    <script src="/scripts/script.js"></script>
-</body>
-</html>
+{% endblock %}
