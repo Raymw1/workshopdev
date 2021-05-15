@@ -24,50 +24,19 @@
         </section>
         <main>
             <section id="ideas">
+                {% for idea in ideas %}
                 <div class="idea">
-                    <img src="https://www.flaticon.com/svg/vstatic/svg/2729/2729007.svg?token=exp=1620761718~hmac=a2c7b657b6b3cb3680ff38c08fb2fcf3" alt="Coding courses">
+                    <img src="{{ idea.img }}" alt="Imagem de {{ idea.title }}">
                     <div class="content">
-                        <h3>Cursos de Programação</h3>
-                        <p>Estudo</p>
+                        <h3>{{ idea.title }}</h3>
+                        <p>{{ idea.category }}</p>
                         <div class="description">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eaque repellendus alias quasi repudiandae velit;</p>
+                            <p>{{ idea.description }}</p>
                         </div>
-                        <a href="#">Ir para a ideia</a>
+                        <a href="{{ idea.url }}">Ir para a ideia</a>
                     </div>
                 </div>
-                <div class="idea">
-                    <img src="https://www.flaticon.com/svg/vstatic/svg/2729/2729069.svg?token=exp=1620761718~hmac=c23d1569dfab4ceaff57c38705ad6d1e" alt="Yoga">
-                    <div class="content">
-                        <h3>Yoga</h3>
-                        <p>Bem Estar</p>
-                        <div class="description">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eaque repellendus alias quasi repudiandae velit;</p>
-                        </div>
-                        <a href="#">Ir para a ideia</a>
-                    </div>
-                </div>
-                <div class="idea">
-                    <img src="https://www.flaticon.com/svg/vstatic/svg/2729/2729001.svg?token=exp=1620761718~hmac=661c743d5588b42d313ecd86c78ba889" alt="Reading">
-                    <div class="content">
-                        <h3>Leitura</h3>
-                        <p>Estudo/Entretenimento</p>
-                        <div class="description">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eaque repellendus alias quasi repudiandae velit;</p>
-                        </div>
-                        <a href="#">Ir para a ideia</a>
-                    </div>
-                </div>
-                <div class="idea">
-                    <img src="https://www.flaticon.com/svg/vstatic/svg/2729/2729027.svg?token=exp=1620934043~hmac=4ebb143d41ff7ea490a5849c585f42d7" alt="Meditation">
-                    <div class="content">
-                        <h3>Meditação</h3>
-                        <p>Saúde Mental</p>
-                        <div class="description">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eaque repellendus alias quasi repudiandae velit;</p>
-                        </div>
-                        <a href="#">Ir para a ideia</a>
-                    </div>
-                </div>
+                {% endfor %}
             </section>
         </main>
         <footer>Com ♥️ <a href="https://github.com/Raymw1" target="_blank">Rayan Wilbert</a></footer>
