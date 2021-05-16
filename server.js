@@ -1,5 +1,6 @@
 const express = require("express");
 const server = express();
+const db = require("./db");
 
 // Static
 server.use(express.static("public"));
@@ -58,21 +59,33 @@ const ideas = [
 // const reversedIdeas = ideas.reverse();
 
 server.get("/", function(req, res) {
-    let lastIdeas = [];
-    const reversedIdeas = [...ideas].reverse();
-    for (let idea of reversedIdeas) {
-        if (lastIdeas.length < 2) {
-            lastIdeas.push(idea);
-        }   else{
-            break;
+    db.all("SELECT * FROM ideas", function(err, rows) {
+        if (err) {
+            console.log(err);
+            return res.send("Erro no banco de dados!");
         }
-    }
-    return res.render("index.html", { ideas: lastIdeas });    // Using nunjucks
+        const reversedIdeas = [...rows].reverse();
+        let lastIdeas = [];
+        for (let idea of reversedIdeas) {
+            if (lastIdeas.length < 2) {
+                lastIdeas.push(idea);
+            }   else{
+                break;
+            }
+        }
+        return res.render("index.html", { ideas: lastIdeas });    // Using nunjucks
+    })
 })
 
 server.get("/ideas", function(req, res) {
-    const reversedIdeas = [...ideas].reverse();
-    return res.render("ideas.html", { ideas: reversedIdeas });
+    db.all("SELECT * FROM ideas", function(err, rows) {
+        if (err) {
+            console.log(err);
+            return res.send("Erro no banco de dados!");
+        }
+        const reversedIdeas = [...rows].reverse();
+        return res.render("ideas.html", { ideas: reversedIdeas });
+    })
 })
 
 server.listen(3000, function() {

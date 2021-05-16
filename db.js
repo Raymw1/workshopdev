@@ -17,9 +17,9 @@ db.serialize(function() {
     //     if (err) return console.log(err);
     // })
     
-    db.all("SELECT * FROM ideas;", function(err, rows) {
-        console.log(rows);
-    });
+    // db.all("SELECT * FROM ideas;", function(err, rows) {
+    //     console.log(rows);
+    // });
 })
 
-
+module.exports = db;
