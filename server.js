@@ -97,8 +97,21 @@ server.post("/", function(req, res) {
     const category = req.body.category;
     const description = req.body.description;
     const link = req.body.link;
-
-    return res.send(title);
+    const query = `INSERT INTO ideas (
+        image, title, category, description, link) VALUES (?, ?, ?, ?, ?);`;
+    const values = [image, title, category, description, link];
+    for (let value of values) {
+        if (!value) {
+            return res.send("Você deixou um campo em vazio. Por favor, tente novamente!");
+        }
+    }
+    db.run(query, values, function(err) {
+        if (err) {
+            console.log(err);
+            return res.send("Erro no banco de dados!");
+        }
+        return res.redirect("/ideas");
+    })
 })
 
 server.listen(3000, function() {
