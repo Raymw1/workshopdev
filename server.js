@@ -75,6 +75,8 @@ server.get("/ideas", function(req, res) {
     return res.render("ideas.html", { ideas: reversedIdeas });
 })
 
-server.listen(3000);
+server.listen(3000, function() {
+    console.log("Go to http://127.0.0.1:3000/");
+});
 
 
