@@ -7,7 +7,14 @@
         <div class="description">
             <p>{{ idea.description }}</p>
         </div>
-        <a href="{{ idea.link }}" target="_blank">Ir para a ideia</a>
+        <div id="actions-idea">
+            <a href="{{ idea.link }}" target="_blank">Ir para a ideia</a>
+            <form action="/del" method="post">
+                <input type="text" name="title" value="{{ idea.title }}" hidden>
+                <input type="text" name="image" value="{{ idea.image }}" hidden>
+                <button type="submit" id="remove">Remover</button>
+            </form>
+        </div>
     </div>
 </div>
 {% endfor %}

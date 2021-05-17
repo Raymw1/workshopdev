@@ -292,3 +292,20 @@ section#title, section#ideas, #page-ideas footer {
     margin-top: 64px;
 }
 
+#actions-idea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button#remove {
+    color:  #ff5E84;
+    width: 0px;
+    height: 0px;
+    margin: 0 50px;
+    background: none;
+}
+
+button#remove:hover {
+    text-decoration: underline;
+}

@@ -114,6 +114,25 @@ server.post("/", function(req, res) {
     })
 })
 
+server.post("/del", function(req, res) {
+    const image = req.body.image;
+    const title = req.body.title;
+    const query = `DELETE FROM ideas WHERE title = ? AND image = ?;`;
+    const values = [title, image];
+    for (let value of values) {
+        if (!value) {
+            return res.send("Você deixou um campo em vazio. Por favor, tente novamente!");
+        }
+    }
+    db.run(query, values, function(err) {
+        if (err) {
+            console.log(err);
+            return res.send("Erro no banco de dados!");
+        }
+        return res.redirect("/ideas");
+    })
+})
+
 server.listen(3000, function() {
     console.log("Go to http://127.0.0.1:3000/");
 });
